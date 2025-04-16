@@ -39,7 +39,6 @@ const RegisterPage = () => {
                         </div>
                     </div>
 
-
                     <div className="flex flex-col justify-center gap-4 p-4">
 
                         <h1 className="font-serif text-5xl font-bold flex justify-center place-items-baseline pb-10" style={{ fontFamily: 'Merriweather, serif' }}>Orbe</h1>
@@ -48,7 +47,7 @@ const RegisterPage = () => {
                             type="text"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="rounded-lg p-2 bg-blue-950 w-70 text-amber-50"
+                            className="rounded-lg p-3 bg-blue-950 w-70 text-amber-50"
                             placeholder="Email"
                         />
 
@@ -56,16 +55,16 @@ const RegisterPage = () => {
                             type={showPassword ? "text" : "password"}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="rounded-lg p-2 bg-blue-950 text-amber-50"
+                            className="rounded-lg p-3 bg-blue-950 text-amber-50"
                             placeholder="Password"
                         />
 
                         <label className="flex items-center gap-1">
                             <input
-                                type="checkbox"
+                                type={"checkbox"}
                                 checked={showPassword}
                                 onChange={() => setShowPassword(!showPassword)}
-                                className="form-checkbox h-4 w-4 text-blue-200 bg-gray-700 border-2 border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-300 checked:bg-blue-500 checked:border-blue-500 transition-all duration-200"
+                                className="form-checkbox h-4 w-4 rounded-lg transition-all"
                             />
                             <span>Show Password</span>
                         </label>

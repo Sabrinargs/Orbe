@@ -9,7 +9,15 @@ type ForgotPasswordModalProps = {
 
 const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, closeModal }) => {
     const [email, setEmail] = useState("");
-    const [sendLink, setSendLink] = useState();
+    const [isSending, setIsSending] = useState(false);
+
+    const handleSendLink = () => {
+        setIsSending(true);
+        setTimeout(() => {
+            setIsSending(false);
+            closeModal();
+        },1000);
+    };
 
     return (
         <div className="flex justify-start items-center pl-95">
@@ -36,23 +44,23 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, close
                                 type="text"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="rounded-lg p-2 bg-blue-950 w-70 text-amber-50"
+                                className="rounded-lg p-3 bg-blue-950 w-70 text-amber-50"
                                 placeholder="Email or Number"
                             />
                             
                             <Button
                                 variant="secondary"
                                 type="button"
-                                onClick={sendLink}
+                                onClick={handleSendLink}
                                 className=""
                             >
                                 Send Link
                             </Button>
 
                             <Button
-                                variant="default"
+                                variant="ghost"
                                 onClick={closeModal}
-                                className="absolute bottom-4 right-4"
+                                className="flex justify-center items-center absolute bottom-4 right-4"
                             >
                                 Back to login
                             </Button>
