@@ -5,6 +5,7 @@ import abstractImage from "../assets/img/abstract.jpg";
 import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
 import ForgotPasswordModal from "./modal-forgot-password";
+import abstractFull from "../assets/img/abstractFull.jpg"
 
 const RegisterPage = () => {
     const [email, setEmail] = useState("");
@@ -17,20 +18,23 @@ const RegisterPage = () => {
 
     return (
         <form className="grid place-items-center h-screen">
-
+            <div className="fixed inset-0 -z-10">
+                <img className="w-full h-full object-cover opacity-50" src={abstractFull} alt="" />a
+            </div>
             <style>
                 {`
                     @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
                 `}
             </style>
 
-            <div className="flex justify-center items-center bg-blue-400 shadow-black dark:shadow-blue-400 shadow-2xl rounded-lg w-250 h-150 gap-1">
+            <div className=" bg-blue-400 shadow-black dark:shadow-blue-400 shadow-2xl rounded-lg w-250 h-150 gap-1 absolute">
+
                 <div className="flex flex-row">
                     <div className="relative">
                         <img className="w-180 h-150 rounded-l-lg" src={abstractImage} alt="" />
 
                         <div className="absolute top-4 left-4 text-white">
-                            <h1 className="text-6xl font-bold" style={{ fontFamily: 'Merriweather, serif'}}>Orbe</h1>
+                            <h1 className="text-6xl font-bold" style={{ fontFamily: 'Merriweather, serif' }}>Orbe</h1>
                             <h2 className="text-3xl text-blue-950">Sua visão, nossa missão.</h2>
                         </div>
                     </div>
