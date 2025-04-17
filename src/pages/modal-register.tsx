@@ -27,7 +27,6 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
         }
     };
 
-
     return (
         <div className="absolute flex justify-start items-center overflow-hidden pl-172">
             <AnimatePresence>
@@ -38,7 +37,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: 30, opacity: 0 }}
                         transition={{
-                            type: "spring",
+                            type: "tween",
                             stiffness: 80,
                             damping: 12
                         }}
@@ -62,7 +61,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="rounded-lg p-3 bg-blue-950 w-70 text-amber-50"
-                                placeholder="Email or number"
+                                placeholder="Email or Number"
                             />
 
                             <div className="relative">
@@ -94,7 +93,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
                                     placeholder="Confirm Password"
                                 />
 
-                                {password.length > 0 && (
+                                {confirmPassword.length > 0 && (
                                     <button
                                         type="button"
                                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}

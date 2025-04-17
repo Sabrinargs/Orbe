@@ -52,7 +52,7 @@ const LoginPage = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="rounded-lg p-3 bg-blue-950 w-70 text-amber-50"
-                            placeholder="Email"
+                            placeholder="Email or Number"
                         />
 
                         <div className="relative">
