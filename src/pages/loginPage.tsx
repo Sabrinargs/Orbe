@@ -4,17 +4,21 @@ import { Link } from "react-router-dom";
 import abstractImage from "../assets/img/abstract.jpg";
 import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
+import ModalForgotPassword from "./modal-forgot-password";
+import abstractFull from "../assets/img/abstractFull.jpg";
+import ModalRegister from "./modal-register";
 import ForgotPasswordModal from "./modal-forgot-password";
-import abstractFull from "../assets/img/abstractFull.jpg"
 
-const RegisterPage = () => {
+const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [activeModal, setActiveModal] = useState<"forgotPassword" | "register" | null>(null);
 
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const handleModal = (modal: "forgotPassword" | "register" | null) => {
+        setActiveModal(modal);
+    };
 
     return (
         <form className="grid place-items-center h-screen">
@@ -51,23 +55,25 @@ const RegisterPage = () => {
                             placeholder="Email"
                         />
 
-                        <input
-                            type={showPassword ? "text" : "password"}
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="rounded-lg p-3 bg-blue-950 text-amber-50"
-                            placeholder="Password"
-                        />
-
-                        <label className="flex items-center gap-1">
+                        <div className="relative">
                             <input
-                                type={"checkbox"}
-                                checked={showPassword}
-                                onChange={() => setShowPassword(!showPassword)}
-                                className="form-checkbox h-4 w-4 rounded-lg transition-all"
+                                type={showPassword ? "text" : "password"}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="rounded-lg p-3 pr-20 bg-blue-950 text-amber-50 w-full "
+                                placeholder="Password"
                             />
-                            <span>Show Password</span>
-                        </label>
+
+                            {password.length > 0 && (
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-white hover:underline"
+                                >
+                                    {showPassword ? 'Ocultar' : 'Mostrar'}
+                                </button>
+                            )}
+                        </div>
 
                         <Button variant="default">
                             <Link to="/login">
@@ -78,19 +84,41 @@ const RegisterPage = () => {
                         <Button
                             variant="ghost"
                             type="button"
-                            onClick={openModal}
+                            onClick={() => handleModal("forgotPassword")}
                             className=""
                         >
                             Forgot Password?
+                        </Button>
+
+                        <div className="flex items-center w-full my-4">
+                            <div className="flex-grow border-t border-amber-50"></div>
+                            <span className="mx-4 text-amber-50 text-sm">Or</span>
+                            <div className="flex-grow border-t border-amber-50"></div>
+                        </div>
+
+                        <Button
+                            variant="ghost"
+                            type="button"
+                            onClick={() => handleModal("register")}
+                            className=""
+                        >
+                            Sign up
                         </Button>
 
                     </div>
                 </div>
             </div>
 
-            <ForgotPasswordModal isOpen={isModalOpen} closeModal={closeModal} />
+            <ModalForgotPassword
+                isOpen={activeModal === "forgotPassword"}
+                closeModal={() => handleModal(null)} 
+            />
+            <ModalRegister
+                isOpen={activeModal === "register"}
+                closeModal={() => handleModal(null)} 
+            />
         </form>
     );
 }
 
-export default RegisterPage;
+export default LoginPage;

@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-type ForgotPasswordModalProps = {
+type ModalForgotPassawordProps = {
     isOpen: boolean;
     closeModal: () => void;
 };
 
-const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, closeModal }) => {
+const ForgotPasswordModal: React.FC<ModalForgotPassawordProps> = ({ isOpen, closeModal }) => {
     const [email, setEmail] = useState("");
     const [isSending, setIsSending] = useState(false);
 
@@ -16,11 +16,11 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, close
         setTimeout(() => {
             setIsSending(false);
             closeModal();
-        },1000);
+        }, 1000);
     };
 
     return (
-        <div className="flex justify-start items-center pl-95">
+        <div className=" flex justify-start items-center overflow-hidden pl-95">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -47,7 +47,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, close
                                 className="rounded-lg p-3 bg-blue-950 w-70 text-amber-50"
                                 placeholder="Email or Number"
                             />
-                            
+
                             <Button
                                 variant="secondary"
                                 type="button"
@@ -58,6 +58,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, close
                             </Button>
 
                             <Button
+                                type="button"
                                 variant="ghost"
                                 onClick={closeModal}
                                 className="flex justify-center items-center absolute bottom-4 right-4"
