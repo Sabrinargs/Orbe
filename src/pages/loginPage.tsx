@@ -8,6 +8,7 @@ import ModalForgotPassword from "./modal-forgot-password";
 import abstractFull from "../assets/img/abstractFull.jpg";
 import ModalRegister from "./modal-register";
 import ForgotPasswordModal from "./modal-forgot-password";
+import video from "../assets/img/abstractvideo0.mp4";
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
@@ -35,7 +36,10 @@ const LoginPage = () => {
 
                 <div className="flex flex-row">
                     <div className="relative">
-                        <img className="w-180 h-150 rounded-l-lg" src={abstractImage} alt="" />
+                        <video autoPlay loop muted playsInline  className="w-[600px] h-[600px] rounded-l-lg">
+                            <source src={video} type="video/mp4" />
+                            Seu navegador não suporta vídeos.
+                        </video>
 
                         <div className="absolute top-4 left-4 text-white">
                             <h1 className="text-6xl font-bold" style={{ fontFamily: 'Merriweather, serif' }}>Orbe</h1>
@@ -43,7 +47,7 @@ const LoginPage = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col justify-center gap-4 p-4">
+                    <div className="flex flex-col justify-center  gap-4 p-15">
 
                         <h1 className="font-serif text-5xl font-bold flex justify-center place-items-baseline pb-10" style={{ fontFamily: 'Merriweather, serif' }}>Orbe</h1>
 
@@ -111,11 +115,11 @@ const LoginPage = () => {
 
             <ModalForgotPassword
                 isOpen={activeModal === "forgotPassword"}
-                closeModal={() => handleModal(null)} 
+                closeModal={() => handleModal(null)}
             />
             <ModalRegister
                 isOpen={activeModal === "register"}
-                closeModal={() => handleModal(null)} 
+                closeModal={() => handleModal(null)}
             />
         </form>
     );

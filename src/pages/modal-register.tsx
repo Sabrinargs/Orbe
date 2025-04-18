@@ -28,7 +28,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
     };
 
     return (
-        <div className="absolute flex justify-start items-center overflow-hidden pl-172">
+        <div className="absolute flex justify-start items-center overflow-hidden pl-149">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -41,10 +41,10 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
                             stiffness: 80,
                             damping: 12
                         }}
-                        className="flex justify-center items-center bg-blue-400 shadow-2xl rounded-lg w-78 h-150 gap-1"
+                        className="flex justify-center items-center bg-blue-400 shadow-2xl rounded-lg w-100 h-150 gap-1"
                     >
 
-                        <div className="flex flex-col justify-center gap-3 p-10">
+                        <div className="flex flex-col justify-center items-center gap-3 p-10">
 
                             <div className="font-bold text-lg text-center"><h1>Create an account</h1></div>
                             <h2 className="text-center text-sm w-full px-1">Sign up to closely track your investments and make financial decisions with more confidence.</h2>
@@ -64,7 +64,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
                                 placeholder="Email or Number"
                             />
 
-                            <div className="relative">
+                            <div className="relative w-70">
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     value={password}
@@ -84,7 +84,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
                                 )}
                             </div>
 
-                            <div className="relative">
+                            <div className="relative w-70">
                                 <input
                                     type={showConfirmPassword ? "text" : "password"}
                                     value={confirmPassword}
@@ -108,7 +108,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
                                 variant="secondary"
                                 type="button"
                                 // onClick={}
-                                className=""
+                                className="w-70"
                             >
                                 Sign up
                             </Button>

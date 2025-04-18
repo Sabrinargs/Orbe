@@ -20,7 +20,7 @@ const ForgotPasswordModal: React.FC<ModalForgotPassawordProps> = ({ isOpen, clos
     };
 
     return (
-        <div className="absolute flex justify-start items-center overflow-hidden pl-174">
+        <div className="absolute flex justify-start items-center overflow-hidden pl-149">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -33,8 +33,8 @@ const ForgotPasswordModal: React.FC<ModalForgotPassawordProps> = ({ isOpen, clos
                             stiffness: 80,
                             damping: 12
                         }}
-                        className="flex justify-center items-center bg-blue-400 shadow-2xl rounded-lg w-78 h-150 gap-1 ">
-                        <div className="flex flex-col justify-center gap-3 p-10">
+                        className="flex justify-center items-center bg-blue-400 shadow-2xl rounded-lg w-99 h-150 gap-1 ">
+                        <div className="flex flex-col justify-center items-center gap-3 p-10">
                             <h2 className="text-xl"></h2>
 
                             <div className="font-bold text-lg text-center"><h1>Having trouble signing in?</h1></div>
@@ -52,7 +52,7 @@ const ForgotPasswordModal: React.FC<ModalForgotPassawordProps> = ({ isOpen, clos
                                 variant="secondary"
                                 type="button"
                                 onClick={handleSendLink}
-                                className=""
+                                className="w-70"
                             >
                                 Send Link
                             </Button>
