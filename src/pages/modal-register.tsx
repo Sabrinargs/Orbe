@@ -28,7 +28,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
     };
 
     return (
-        <div className="absolute flex justify-start items-center overflow-hidden pl-149">
+        <div className="absolute flex justify-start items-center  pl-150">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -41,7 +41,7 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ isOpen, closeModal }) => 
                             stiffness: 80,
                             damping: 12
                         }}
-                        className="flex justify-center items-center bg-blue-400 shadow-2xl rounded-lg w-100 h-150 gap-1"
+                        className="flex justify-center items-center bg-blue-400 shadow-2xl rounded-r-lg w-103 h-150 gap-1"
                     >
 
                         <div className="flex flex-col justify-center items-center gap-3 p-10">

@@ -20,7 +20,7 @@ const ForgotPasswordModal: React.FC<ModalForgotPassawordProps> = ({ isOpen, clos
     };
 
     return (
-        <div className="absolute flex justify-start items-center overflow-hidden pl-149">
+        <div className="absolute flex justify-start items-center pl-150">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -33,7 +33,7 @@ const ForgotPasswordModal: React.FC<ModalForgotPassawordProps> = ({ isOpen, clos
                             stiffness: 80,
                             damping: 12
                         }}
-                        className="flex justify-center items-center bg-blue-400 shadow-2xl rounded-lg w-99 h-150 gap-1 ">
+                        className="flex justify-center items-center bg-blue-400 shadow-2xl rounded-r-lg w-101 h-150 gap-1 ">
                         <div className="flex flex-col justify-center items-center gap-3 p-10">
                             <h2 className="text-xl"></h2>
 
