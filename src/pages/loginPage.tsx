@@ -42,8 +42,8 @@ const LoginPage = () => {
                         </video>
 
                         <div className="absolute top-4 left-4 text-white">
-                            <h1 className="text-6xl font-bold" style={{ fontFamily: 'Merriweather, serif' }}>Orbe</h1>
-                            <h2 className="text-3xl text-blue-950">Sua visão, nossa missão.</h2>
+                            <h1 className="text-6xl font-bold" style={{ fontFamily: 'Merriweather, serif'}}>Orbe</h1>
+                            <h2 className="text-3xl text-amber-50">Sua visão, nossa missão.</h2>
                         </div>
                     </div>
 
